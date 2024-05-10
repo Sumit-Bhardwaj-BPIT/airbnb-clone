@@ -9,7 +9,7 @@ const PhotosUploader = ({addedPhotos,setAddedPhotos}) => {
 
     async function addPhotobyLink(ev) {
       ev.preventDefault();
-      const { data: filename } = await axios.post('http://localhost:4000/upload-by-link', { link: photoLink });
+      const { data: filename } = await axios.post('/upload-by-link', { link: photoLink });
       setAddedPhotos((prev) => {
         // Ensure that prev is not undefined
         console.log(prev);
@@ -36,7 +36,7 @@ const PhotosUploader = ({addedPhotos,setAddedPhotos}) => {
         data.append('photos', file, newFileName);
       }
     
-      axios.post('http://localhost:4000/upload', data, {
+      axios.post('/upload', data, {
   headers: { 'Content-type': 'multipart/form-data' }
 }).then((res) => {
   const { data: filenames } = res;

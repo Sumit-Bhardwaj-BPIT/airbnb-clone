@@ -26,7 +26,7 @@ import BookingDates from "./BookingDates";
 export default function BookingsPage() {
   const [bookings,setBookings] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:4000/bookings').then(response => {
+    axios.get('/bookings').then(response => {
       setBookings(response.data);
     });
   }, []);

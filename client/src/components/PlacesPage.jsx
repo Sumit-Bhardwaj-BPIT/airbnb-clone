@@ -9,7 +9,7 @@ const PlacesPage = () => {
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/places').then(({ data }) => {
+    axios.get('/places').then(({ data }) => {
       setPlaces(data);
     });
   }, []);
@@ -55,7 +55,7 @@ const PlacesPage = () => {
                     {/* //<PlaceImg place={place} /> */}
                     {
                       place.addedPhotos.length>0 && (
-                        <img src={'http://localhost:4000/uploads/' + place.addedPhotos[0]} alt="" />
+                        <img src={'/uploads/' + place.addedPhotos[0]} alt="" />
                       )
                     }
                   </div>

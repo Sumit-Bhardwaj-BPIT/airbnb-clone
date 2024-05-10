@@ -10,7 +10,7 @@ const PlacePage = () => {
         if(!id){
             return;
         }
-        axios.get(`http://localhost:4000/places/${id}`).then((res)=>{
+        axios.get(`/places/${id}`).then((res)=>{
             setPlace(res.data);
         })
 

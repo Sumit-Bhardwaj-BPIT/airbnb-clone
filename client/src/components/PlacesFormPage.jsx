@@ -22,7 +22,7 @@ const PlacesFormPage = () => {
       if(!id){
         return;
       }
-      axios.get('http://localhost:4000/places/'+id).then(res=>{
+      axios.get('/places/'+id).then(res=>{
         const {data} = res;
         setTitle(data.title);
        setAddress(data.address);
@@ -48,13 +48,13 @@ const PlacesFormPage = () => {
       };
       if (id) {
         // update
-        await axios.put('http://localhost:4000/places', {
+        await axios.put('/places', {
           id, ...placeData
         });
         setRedirect(true);
       } else {
         // new place
-        await axios.post('http://localhost:4000/places', placeData);
+        await axios.post('/places', placeData);
         setRedirect(true);
       }
   
@@ -67,7 +67,7 @@ const PlacesFormPage = () => {
     //     description, perks, extraInfo,
     //     checkin, checkout, maxGuests, price,
     //   };
-    //   // await axios.post('http://localhost:4000/places',{
+    //   // await axios.post('/places',{
     //   //   title,address,addedPhotos,description,perks,extraInfo,checkin,checkout,maxGuests,
     //   // });
 
@@ -75,13 +75,13 @@ const PlacesFormPage = () => {
 
     //   if (id) {
     //     // update
-    //     await axios.put('http://localhost:4000/places', {
+    //     await axios.put('/places', {
     //       id, ...placeData
     //     });
     //     setRedirect(true);
     //   } else {
     //     // new place
-    //     await axios.post('http://localhost:4000/places', placeData);
+    //     await axios.post('/places', placeData);
     //     setRedirect(true);
     //   }
       

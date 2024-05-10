@@ -12,7 +12,7 @@ const Account = () => {
   let {subpage} = useParams();
   if(subpage === undefined) subpage='profile';
   async function logout(){
-    await axios.post('http://localhost:4000/logout');
+    await axios.post('/logout');
     
     setRedirect('/');
     setUser(null);

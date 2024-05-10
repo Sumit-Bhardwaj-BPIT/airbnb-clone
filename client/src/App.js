@@ -17,6 +17,7 @@ import BookingsPage from "./BookingsPage";
 function App(){
   const [spin,setSpin]=useState(true);
   axios.defaults.withCredentials=true;
+  axios.defaults.baseURL='http://localhost:4000';
   useEffect(() => {
     // Simulating an asynchronous operation
     setTimeout(() => {

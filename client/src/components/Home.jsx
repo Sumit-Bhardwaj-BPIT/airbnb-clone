@@ -26,7 +26,7 @@ import Images from "../Images.jsx";
 export default function Home() {
   const [places,setPlaces] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:4000/home').then(response => {
+    axios.get('/home').then(response => {
       setPlaces(response.data);
     });
   }, []);

@@ -13,7 +13,7 @@ const Login = () => {
     ev.preventDefault();
     try{
       
-      const {data} = await axios.post('http://localhost:4000/login',
+      const {data} = await axios.post('/login',
         {email,password},
       );
        setUser(data);
