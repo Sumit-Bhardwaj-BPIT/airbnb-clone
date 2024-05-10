@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+input[type='email'],input[type='password'],input[type='text'],input[type='number'], input[type='tel'] {
+    @apply w-full border py-2 my-1 px-3 rounded-2xl ;
+}
+
+button{
+    @apply w-full ;
+}
+button.primary{
+     background-color: #F53850;
+    @apply bg-primary p-2 w-full text-white rounded-2xl;
+}
+.spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: conic-gradient(#0000 10%, #22223b);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+    animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+    to {
+        transform: rotate(1turn);
+    }
+}
